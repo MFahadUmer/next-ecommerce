@@ -1,0 +1,13 @@
+.input {
+  width: 100%;
+  padding: 10px;
+  border-radius: 8px;
+  border: 1px solid black;
+  font-size: 16px;
+}
+
+.input:focus {
+  outline: 3px solid var(--light-green);
+  /* border: 5px solid var(--light-green); */
+  /* box-shadow: 5px -5px 10px 8px var(--light-green); */
+}

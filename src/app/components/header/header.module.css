@@ -1,0 +1,19 @@
+.logo_search_box {
+  display: flex;
+  align-items: center;
+}
+
+.searchInput {
+  display: flex;
+}
+
+.logo {
+  display: flex;
+  align-items: center;
+  gap: 5px;
+}
+
+.icon {
+  font-size: 30px;
+  color: var(--green);
+}

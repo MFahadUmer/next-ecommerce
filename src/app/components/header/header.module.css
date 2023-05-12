@@ -1,10 +1,25 @@
-.logo_search_box {
+.box {
   display: flex;
+  justify-content: space-between;
   align-items: center;
 }
 
-.searchInput {
+.logo_search_box {
   display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.searchInput {
+  display: none;
+}
+
+.inputComponent {
+  flex: 6;
+}
+
+.buttonComponent {
+  flex: 2;
 }
 
 .logo {
@@ -16,4 +31,35 @@
 .icon {
   font-size: 30px;
   color: var(--green);
+}
+
+.notification {
+  display: flex;
+  gap: 0.5rem;
+}
+
+/* Extra small devices (phones, 600px and down) */
+@media only screen and (max-width: 600px) {
+}
+
+/* Small devices (portrait tablets and large phones, 600px and up) */
+@media only screen and (min-width: 600px) {
+}
+
+/* Medium devices (landscape tablets, 768px and up) */
+@media only screen and (min-width: 768px) {
+}
+
+/* Large devices (laptops/desktops, 992px and up) */
+@media only screen and (min-width: 992px) {
+  .searchInput {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    flex: auto;
+  }
+}
+
+/* Extra large devices (large laptops and desktops, 1200px and up) */
+@media only screen and (min-width: 1200px) {
 }

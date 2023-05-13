@@ -1,7 +1,7 @@
 import './globals.css';
 import Header from './components/header/header';
-
 import { Roboto } from 'next/font/google';
+import Navigation from './components/navigation/Navigation';
 
 const roboto = Roboto({
   weight: ['300', '400', '500', '700'],
@@ -20,6 +20,7 @@ export default function RootLayout({ children }) {
       <body className={roboto.className}>
         <div className="container">
           <Header />
+          <Navigation />
         </div>
         {children}
       </body>

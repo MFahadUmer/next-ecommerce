@@ -9,6 +9,11 @@
   --light-green: #a6e26e;
 }
 
+.hr {
+  background-color: lightgray;
+  margin: 5px 0 15px 0;
+}
+
 /* Extra small devices (phones, 600px and down) */
 @media only screen and (max-width: 600px) {
   .container {

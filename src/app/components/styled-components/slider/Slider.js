@@ -3,6 +3,7 @@ import { useKeenSlider } from 'keen-slider/react';
 import 'keen-slider/keen-slider.min.css';
 import styles from './slider.module.css';
 import Slide from './Slide';
+import slides from '@/app/mock/slide';
 
 const Slider = () => {
   const [currentSlide, setCurrentSlide] = useState(0);
@@ -21,9 +22,24 @@ const Slider = () => {
     <>
       <div className={styles.navigation__wrapper}>
         <div ref={sliderRef} className="keen-slider">
-          <div className={`keen-slider__slide ${styles.number__slide}`}>
-            <Slide />
-          </div>
+          {slides.length > 0
+            ? slides.map((slide, index) => (
+                <div
+                  key={index}
+                  className={`keen-slider__slide ${styles.number__slide}`}
+                >
+                  <Slide
+                    key={index}
+                    promotionText={slide.promotionText}
+                    title={slide.title}
+                    subTitle={slide.subTitle}
+                    buttonText={slide.buttonText}
+                    background={slide.background}
+                    titleSpan={slide.titleSpan}
+                  />
+                </div>
+              ))
+            : ''}
         </div>
         {loaded && instanceRef.current && (
           <>

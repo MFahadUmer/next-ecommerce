@@ -1,7 +1,7 @@
 const slides = [
   {
     promotionText: 'Opening Sale Discount 50%',
-    title: 'Super Market for Fresh Grocery',
+    title: 'Super Market for Fresh Grocery 1',
     subTitle:
       'Introduced a new model for online grocery shopping and convenient home delivery.',
     buttonText: 'Shop Now',
@@ -9,7 +9,7 @@ const slides = [
   },
   {
     promotionText: 'Opening Sale Discount 50%',
-    title: 'Super Market for Fresh Grocery',
+    title: 'Super Market for Fresh Grocery 2',
     titleSpan: '100$',
     subTitle:
       'Introduced a new model for online grocery shopping and convenient home delivery.',
@@ -18,7 +18,7 @@ const slides = [
   },
   {
     promotionText: 'Opening Sale Discount 50%',
-    title: 'Super Market for Fresh Grocery',
+    title: 'Super Market for Fresh Grocery 3',
     subTitle:
       'Introduced a new model for online grocery shopping and convenient home delivery.',
     buttonText: 'Shop Now',

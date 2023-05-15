@@ -2,9 +2,7 @@
 import dynamic from 'next/dynamic';
 const Slider = dynamic(
   () => import('./components/styled-components/slider/Slider'),
-  {
-    ssr: false,
-  }
+  { loading: () => <p>Loading...</p>, ssr: false }
 );
 
 export default function Home() {

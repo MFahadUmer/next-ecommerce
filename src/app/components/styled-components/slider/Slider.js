@@ -2,6 +2,7 @@ import React, { useState } from 'react';
 import { useKeenSlider } from 'keen-slider/react';
 import 'keen-slider/keen-slider.min.css';
 import styles from './slider.module.css';
+import Slide from './Slide';
 
 const Slider = () => {
   const [currentSlide, setCurrentSlide] = useState(0);
@@ -20,8 +21,9 @@ const Slider = () => {
     <>
       <div className={styles.navigation__wrapper}>
         <div ref={sliderRef} className="keen-slider">
-          <div className={`keen-slider__slide ${styles.number__slide}`}>1</div>
-          <div className={`keen-slider__slide ${styles.number__slide}`}>2</div>
+          <div className={`keen-slider__slide ${styles.number__slide}`}>
+            <Slide />
+          </div>
         </div>
         {loaded && instanceRef.current && (
           <>

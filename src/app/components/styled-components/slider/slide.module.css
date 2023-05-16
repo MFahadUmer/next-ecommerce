@@ -1,0 +1,139 @@
+.box {
+  width: 100%;
+  height: 100%;
+}
+
+.image {
+  object-fit: cover;
+  position: relative;
+  z-index: -1;
+}
+
+.banner__box {
+  z-index: 1;
+  width: 50%;
+  height: 100%;
+  display: flex;
+  align-items: flex-start;
+  flex-direction: column;
+  justify-content: center;
+  padding: 70px;
+}
+
+.promotionText {
+  font-size: 0.7rem;
+  color: black;
+  background-color: #ffc107;
+  padding: 3px 5px;
+  border-radius: 5px;
+  font-weight: bold;
+}
+
+.title {
+  font-size: 3rem;
+  color: black;
+  line-height: 1.2;
+  margin-top: 15px;
+}
+
+.subtitle {
+  margin-top: 15px;
+  font-size: 1.2rem;
+  color: rgb(119, 117, 117);
+  font-weight: 400;
+  line-height: 1.5;
+}
+
+.titleSpan {
+  color: var(--green);
+}
+
+/* Extra small devices (phones, 600px and down) */
+@media only screen and (max-width: 600px) {
+  .banner__box {
+    width: 100%;
+    padding: 30px;
+  }
+
+  .title {
+    font-size: 2.1rem;
+    line-height: 1.1;
+    margin-top: 5px;
+  }
+
+  .subtitle {
+    margin-top: 5px;
+    font-size: 1rem;
+    line-height: 1.2;
+  }
+}
+
+/* Small devices (portrait tablets and large phones, 600px and up) */
+@media only screen and (min-width: 600px) {
+  .banner__box {
+    width: 60%;
+    padding: 30px;
+  }
+
+  .title {
+    font-size: 2.1rem;
+    line-height: 1.1;
+    margin-top: 5px;
+  }
+
+  .subtitle {
+    margin-top: 5px;
+    font-size: 1rem;
+    line-height: 1.2;
+  }
+}
+
+/* Medium devices (landscape tablets, 768px and up) */
+@media only screen and (min-width: 768px) {
+  .banner__box {
+    width: 60%;
+    padding: 50px;
+  }
+
+  .title {
+    font-size: 2.5rem;
+    line-height: 1.1;
+    margin-top: 5px;
+  }
+
+  .subtitle {
+    margin-top: 5px;
+    font-size: 1.1rem;
+    line-height: 1.2;
+  }
+}
+
+/* Large devices (laptops/desktops, 992px and up) */
+@media only screen and (min-width: 992px) {
+  .banner__box {
+    padding: 60px;
+    width: 50%;
+  }
+
+  .title {
+    line-height: 1.1;
+    margin-top: 5px;
+  }
+
+  .subtitle {
+    margin-top: 5px;
+    font-size: 1.2rem;
+    line-height: 1.2;
+  }
+}
+
+/* Extra large devices (large laptops and desktops, 1200px and up) */
+@media only screen and (min-width: 1200px) {
+}
+
+@media only screen and (min-width: 1400px) {
+  .banner__box {
+    padding: 80px;
+    width: 45%;
+  }
+}

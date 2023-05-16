@@ -4,13 +4,22 @@ const Slider = dynamic(
   () => import('./components/styled-components/slider/Slider'),
   { loading: () => <p>Loading...</p>, ssr: false }
 );
+const CategorySlider = dynamic(
+  () => import('./components/styled-components/category-slider/CategorySlider'),
+  { loading: () => <p>Loading...</p>, ssr: false }
+);
 
 export default function Home() {
   return (
     <main>
       <hr className="hr" />
       <div className="container">
-        <Slider />
+        <div>
+          <Slider />
+        </div>
+        <div>
+          <CategorySlider />
+        </div>
         <div>Ecommerce Store By Fahad</div>
       </div>
     </main>

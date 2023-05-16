@@ -121,13 +121,12 @@ const Slider = () => {
 };
 
 function Arrow(props) {
-  const disabeld = props.disabled ? ` ${styles.arrow__disabled}` : '';
   return (
     <svg
       onClick={props.onClick}
       className={`${styles.arrow} ${
         props.left ? styles.arrow__left : styles.arrow__right
-      } ${disabeld}`}
+      }`}
       xmlns="http://www.w3.org/2000/svg"
       viewBox="0 0 24 24"
     >

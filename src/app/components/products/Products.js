@@ -1,11 +1,84 @@
 import React from 'react';
-import styles from './products.module.css';
+import products from '@/app/mock/products';
+import Image from 'next/image';
+import ReactStars from 'react-stars';
+import { AiOutlineEye, AiOutlineHeart } from 'react-icons/ai';
+import { BiTransferAlt } from 'react-icons/bi';
 
 const Products = () => {
   return (
     <div>
-      <div className={styles.header}>
-        <h2>Popular Products</h2>
+      <h2 className="my-6 text-2xl font-bold text-slate-700">
+        Featured Products
+      </h2>
+      <div>
+        <div className="grid 2xl:grid-cols-5 xl:grid-cols-5 lg:grid-cols-4 md:grid-cols-3 sm:grid-cols-2 gap-6">
+          {products.length > 0
+            ? products.map((item, index) => {
+                return (
+                  <div
+                    className="group border-2 rounded-lg hover:border-green-700 relative"
+                    key={index}
+                  >
+                    <div className="absolute top-3 left-3">
+                      {item.saleText && (
+                        <p className="text-sm font-semibold rounded py-1 bg-green-700 px-2 text-white">
+                          {item.saleText}
+                        </p>
+                      )}
+                    </div>
+                    <div className="flex my-6 justify-center">
+                      <Image
+                        src={item.image}
+                        alt={item.title}
+                        width={150}
+                        height={150}
+                      />
+                    </div>
+                    <div className="m-4">
+                      <p className="cursor-pointer pt-1 text-xs text-slate-400">
+                        {item.category}
+                      </p>
+                      <p className="cursor-pointer pt-1 text-sm font-bold text-slate-700 hover:text-green-700">
+                        {item.title}
+                      </p>
+                      <div className="my-2 flex items-center gap-1">
+                        <ReactStars
+                          count={5}
+                          size={18}
+                          edit={false}
+                          value={item.rating}
+                          color2={'#ffd700'}
+                        />
+                        <p className="text-xs text-slate-400 font-bold">
+                          {item.rating} ({item.ratingCount})
+                        </p>
+                      </div>
+                      <div className="flex justify-between items-center">
+                        <p>
+                          <span className="text-sm font-bold line-through text-slate-700">
+                            {item.currencyType + item.salePrice}
+                          </span>
+                          &nbsp;
+                          <span className="text-sm font-bold line-through text-slate-400">
+                            {item.currencyType + item.price}
+                          </span>
+                        </p>
+                        <button className="bg-green-700 px-2 rounded py-1 text-sm font-bold text-white">
+                          + Add
+                        </button>
+                      </div>
+                    </div>
+                    <div className="hidden group-hover:flex absolute top-1/2 w-full text-center z-10 flex justify-center gap-2 text-2xl font-normal">
+                      <AiOutlineEye className="text-slate-500 p-1 w-8 h-8 rounded bg-white hover:bg-green-700 hover:text-white" />
+                      <AiOutlineHeart className="text-slate-500 p-1 w-8 h-8 rounded bg-white hover:bg-green-700 hover:text-white" />
+                      <BiTransferAlt className="text-slate-500 p-1 w-8 h-8 rounded bg-white hover:bg-green-700 hover:text-white" />
+                    </div>
+                  </div>
+                );
+              })
+            : ''}
+        </div>
       </div>
     </div>
   );

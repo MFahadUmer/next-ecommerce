@@ -1,8 +1,7 @@
 import React from 'react';
 import Image from 'next/image';
 import ReactStars from 'react-stars';
-import { AiOutlineEye, AiOutlineHeart } from 'react-icons/ai';
-import { BiTransferAlt } from 'react-icons/bi';
+import ProductHover from './ProductHover';
 
 const ProductCard = ({ item }) => {
   return (
@@ -52,16 +51,12 @@ const ProductCard = ({ item }) => {
               {item.currencyType + item.price}
             </span>
           </p>
-          <button className="bg-green-700 px-2 rounded py-1 text-sm font-bold text-white">
+          <button className="bg-green-600 hover:bg-green-700 px-2 rounded py-1 text-sm font-bold text-white">
             + Add
           </button>
         </div>
       </div>
-      <div className="hidden group-hover:flex transition-opacity duration-700 ease-in-out absolute top-1/2 w-full text-center z-10 justify-center gap-2 text-2xl font-normal">
-        <AiOutlineEye className="text-slate-500 p-1 w-8 h-8 rounded bg-white hover:bg-green-700 hover:text-white" />
-        <AiOutlineHeart className="text-slate-500 p-1 w-8 h-8 rounded bg-white hover:bg-green-700 hover:text-white" />
-        <BiTransferAlt className="text-slate-500 p-1 w-8 h-8 rounded bg-white hover:bg-green-700 hover:text-white" />
-      </div>
+      <ProductHover />
     </div>
   );
 };

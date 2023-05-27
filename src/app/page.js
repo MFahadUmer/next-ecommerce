@@ -12,6 +12,13 @@ const Products = dynamic(() => import('./components/products/Products'), {
   loading: () => <p>Loading...</p>,
   ssr: false,
 });
+const BestSellProducts = dynamic(
+  () => import('./components/products/BestSellProducts'),
+  {
+    loading: () => <p>Loading...</p>,
+    ssr: false,
+  }
+);
 
 export default function Home() {
   return (
@@ -21,6 +28,7 @@ export default function Home() {
         <Slider />
         <CategorySlider />
         <Products />
+        <BestSellProducts />
         <div>Ecommerce Store By Fahad</div>
       </div>
     </main>

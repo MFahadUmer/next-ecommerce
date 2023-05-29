@@ -1,11 +1,18 @@
 import React from 'react';
-import styles from './texticonbutton.module.css';
 
-const TextIconButton = ({ text, Icon }) => {
+const TextIconButton = ({
+  text,
+  Icon,
+  color = 'white',
+  bgColor = 'slate-700',
+  hoverBgColor = 'green-500',
+}) => {
   return (
-    <button className={styles.button}>
-      <div className={styles.button__box}>
-        {text} <Icon className={styles.icon} />
+    <button
+      className={`py-2 px-4 text-${color} text-base cursor-pointer hover:bg-${hoverBgColor} bg-${bgColor} rounded-md border-0 font-bold`}
+    >
+      <div className="flex items-center gap-2">
+        {text} <Icon className={`font-bold text-xl text-${color}`} />
       </div>
     </button>
   );

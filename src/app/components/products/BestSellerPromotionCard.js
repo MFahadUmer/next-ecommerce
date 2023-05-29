@@ -4,7 +4,7 @@ import { BsArrowRight } from 'react-icons/bs';
 
 const BestSellerPromotionCard = () => {
   return (
-    <div className="border-2 rounded-lg mx-2 relative h-full bg-cover bg-no-repeat bg-[url('/assets/images/banner-deal.jpg')]">
+    <div className="border-2 rounded-lg relative h-full bg-cover bg-no-repeat bg-[url('/assets/images/banner-deal.jpg')]">
       <div className="m-6">
         <p className="text-2xl text-white font-bold">
           100% Organic Coffee Beans.
@@ -15,8 +15,8 @@ const BestSellerPromotionCard = () => {
         <TextIconButton
           text={'Shop'}
           Icon={BsArrowRight}
-          bgColor="green-600"
-          hoverBgColor="green-700"
+          bgColor="bg-green-600"
+          hoverBgColor="hover:bg-green-700"
         />
       </div>
     </div>

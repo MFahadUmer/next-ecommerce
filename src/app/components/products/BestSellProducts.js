@@ -27,8 +27,8 @@ const BestSellProducts = () => {
       <h2 className=" my-6 text-2xl font-bold text-slate-700">
         Daily Best Sells
       </h2>
-      <div className="flex w-full overflow-x-auto">
-        <div className=" grow-0 shrink-0 basis-full lg:basis-1/4 md:basis-1/2">
+      <div className="flex w-full justify-between overflow-x-auto">
+        <div className="grow-0 shrink-0 basis-full lg:basis-[22%] md:basis-[45%]">
           <BestSellerPromotionCard />
         </div>
         {bestsellproducts?.length > 0

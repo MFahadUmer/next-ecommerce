@@ -19,6 +19,10 @@ const BestSellProducts = dynamic(
     ssr: false,
   }
 );
+const Features = dynamic(() => import('./components/features/Features'), {
+  loading: () => <p>Loading...</p>,
+  ssr: false,
+});
 
 export default function Home() {
   return (
@@ -29,7 +33,8 @@ export default function Home() {
         <CategorySlider />
         <Products />
         <BestSellProducts />
-        <div>Ecommerce Store By Fahad</div>
+        <Features />
+        <div className="mt-5">Ecommerce Store By Fahad</div>
       </div>
     </main>
   );

@@ -36,15 +36,12 @@ export default function Home() {
   return (
     <main>
       <hr className="hr" />
-      <div className="container">
-        <Slider />
-        <CategorySlider />
-        <PromotionCategory />
-        <Products />
-        <BestSellProducts />
-        <Features />
-        <div className="mt-5">Ecommerce Store By Fahad</div>
-      </div>
+      <Slider />
+      <CategorySlider />
+      <PromotionCategory />
+      <Products />
+      <BestSellProducts />
+      <Features />
     </main>
   );
 }

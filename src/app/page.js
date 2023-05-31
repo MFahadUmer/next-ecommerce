@@ -12,17 +12,36 @@ const Products = dynamic(() => import('./components/products/Products'), {
   loading: () => <p>Loading...</p>,
   ssr: false,
 });
+const BestSellProducts = dynamic(
+  () => import('./components/products/BestSellProducts'),
+  {
+    loading: () => <p>Loading...</p>,
+    ssr: false,
+  }
+);
+const Features = dynamic(() => import('./components/features/Features'), {
+  loading: () => <p>Loading...</p>,
+  ssr: false,
+});
+
+const PromotionCategory = dynamic(
+  () => import('./components/promotionCategory/PromotionCategory'),
+  {
+    loading: () => <p>Loading...</p>,
+    ssr: false,
+  }
+);
 
 export default function Home() {
   return (
     <main>
       <hr className="hr" />
-      <div className="container">
-        <Slider />
-        <CategorySlider />
-        <Products />
-        <div>Ecommerce Store By Fahad</div>
-      </div>
+      <Slider />
+      <CategorySlider />
+      <PromotionCategory />
+      <Products />
+      <BestSellProducts />
+      <Features />
     </main>
   );
 }

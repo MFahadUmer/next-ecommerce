@@ -13,6 +13,7 @@
     "keen-slider": "^6.8.5",
     "next": "^13.4.1",
     "react": "^18.2.0",
+    "react-countdown": "^2.3.5",
     "react-dom": "^18.2.0",
     "react-icons": "^4.8.0",
     "react-stars": "^2.2.5"

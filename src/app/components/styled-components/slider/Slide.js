@@ -34,7 +34,12 @@ const Slide = ({
         )}
         {subTitle && <p className={styles.subtitle}>{subTitle}</p>}
         <div>
-          <TextIconButton text={buttonText} Icon={BsArrowRight} />
+          <TextIconButton
+            bgColor="bg-slate-700"
+            text={buttonText}
+            Icon={BsArrowRight}
+            hoverBgColor="hover:bg-slate-500"
+          />
         </div>
       </div>
     </div>

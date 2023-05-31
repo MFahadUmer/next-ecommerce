@@ -58,7 +58,9 @@ const CategorySlider = () => {
   return (
     <div className={styles.slider}>
       <div className={styles.slider__header}>
-        <h2>Featured Categories</h2>
+        <h2 className="my-6 text-2xl font-bold text-slate-700">
+          Featured Categories
+        </h2>
         <div className={styles.arrows__container}>
           <IoIosArrowBack
             onClick={(e) => e.stopPropagation() || instanceRef.current?.prev()}

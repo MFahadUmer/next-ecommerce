@@ -24,6 +24,14 @@ const Features = dynamic(() => import('./components/features/Features'), {
   ssr: false,
 });
 
+const PromotionCategory = dynamic(
+  () => import('./components/promotionCategory/PromotionCategory'),
+  {
+    loading: () => <p>Loading...</p>,
+    ssr: false,
+  }
+);
+
 export default function Home() {
   return (
     <main>
@@ -31,6 +39,7 @@ export default function Home() {
       <div className="container">
         <Slider />
         <CategorySlider />
+        <PromotionCategory />
         <Products />
         <BestSellProducts />
         <Features />

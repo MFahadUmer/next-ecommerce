@@ -9,7 +9,7 @@ const BestSellProducts = () => {
       <h2 className=" my-6 text-2xl font-bold text-slate-700">
         Daily Best Sells
       </h2>
-      <div className="flex w-full justify-between  overflow-x-auto gap-4">
+      <div className="flex w-full justify-between  overflow-x-auto gap-2">
         <div className="grow-0 shrink-0 basis-full lg:basis-[24%] md:basis-[calc(50%-16px)]">
           <BestSellerPromotionCard />
         </div>

@@ -1,7 +1,7 @@
 import React from 'react';
 import SimpleButton from '../styled-components/button/SimpleButton';
 
-const PromotionCardCategoryCard = () => {
+const PromotionCategoryCard = () => {
   return (
     <div className="rounded-lg h-52 bg-cover bg-no-repeat bg-[url('/assets/images/grocery-banner.png')] w-full">
       <div className="ml-8 mt-8">
@@ -19,4 +19,4 @@ const PromotionCardCategoryCard = () => {
   );
 };
 
-export default PromotionCardCategoryCard;
+export default PromotionCategoryCard;

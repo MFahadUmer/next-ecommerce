@@ -6,7 +6,7 @@ import StyledCountdown from '../countdown/StyledCountdown';
 
 const BestSellProductCard = ({ item }) => {
   return (
-    <div className="group grow-0 shrink-0 basis-full lg:basis-1/4 md:basis-1/2">
+    <div className="group grow-0 shrink-0 basis-full lg:basis-[24%] md:basis-[calc(50%-16px)]">
       <div className="border-2 rounded-lg hover:border-green-700 relative">
         <div className="flex my-6 justify-center ">
           <Image

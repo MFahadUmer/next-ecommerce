@@ -21,6 +21,9 @@ import { Input } from '@/components/ui/input';
 import toast from 'react-hot-toast';
 import axios from 'axios';
 import { useRouter, useParams } from 'next/navigation';
+import AlertModal from '@/components/modals/alert-modal';
+import ApiAlert from '@/components/ui/api-alert';
+import { useOrigin } from '@/hooks/use-origin';
 
 interface SettingsFormProps {
   initialData: Store;
@@ -31,6 +34,7 @@ const formSchema = z.object({
 });
 
 const SettingsForm: React.FC<SettingsFormProps> = ({ initialData }) => {
+  const origin = useOrigin();
   const params = useParams();
   const router = useRouter();
   const [open, setOpen] = useState(false);
@@ -54,11 +58,38 @@ const SettingsForm: React.FC<SettingsFormProps> = ({ initialData }) => {
     }
   };
 
+  const onDelete = async () => {
+    try {
+      setLoading(true);
+      await axios.delete(`/api/stores/${params.storeId}`);
+      router.refresh();
+      router.push('/');
+      toast.success('Store deleted');
+    } catch (error) {
+      toast.error('Make sure your removed all products and categories first');
+    } finally {
+      setLoading(false);
+      setOpen(false);
+    }
+  };
+
   return (
     <>
+      <AlertModal
+        isOpen={open}
+        onClose={() => setOpen(false)}
+        onConfirm={onDelete}
+        loading={loading}
+      />
       <div className="flex items-center justify-between">
         <Heading title="Settings" description="Manage Store Preferences" />
-        <Button variant="destructive" size="sm" onClick={() => {}}>
+        <Button
+          variant="destructive"
+          size="sm"
+          onClick={() => {
+            setOpen(true);
+          }}
+        >
           <Trash className="h-4 w-4" />
         </Button>
       </div>
@@ -92,6 +123,12 @@ const SettingsForm: React.FC<SettingsFormProps> = ({ initialData }) => {
           </Button>
         </form>
       </Form>
+      <Separator />
+      <ApiAlert
+        title="NEXT_PUBLIC_API_URL"
+        description={`${origin}/api/${params.storeId}`}
+        variant="public"
+      />
     </>
   );
 };

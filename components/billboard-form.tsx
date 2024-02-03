@@ -22,6 +22,7 @@ import toast from 'react-hot-toast';
 import axios from 'axios';
 import { useRouter, useParams } from 'next/navigation';
 import AlertModal from '@/components/modals/alert-modal';
+import ImageUpload from '@/components/ui/image-upload';
 
 interface BillboardsFormProps {
   initialData: Billboard | null;
@@ -104,7 +105,25 @@ const BillboardForm: React.FC<BillboardsFormProps> = ({ initialData }) => {
           onSubmit={form.handleSubmit(onSubmit)}
           className="space-y-8 w-full"
         >
-          <div className="grid grid-cols-3 gapp-8">
+          <FormField
+            control={form.control}
+            name="imageUrl"
+            render={({ field }) => (
+              <FormItem>
+                <FormLabel>Background Image</FormLabel>
+                <FormControl>
+                  <ImageUpload
+                    onRemove={() => field.onChange('')}
+                    disabled={loading}
+                    value={field.value ? [field.value] : []}
+                    onChange={(url) => field.onChange(url)}
+                  />
+                </FormControl>
+                <FormMessage />
+              </FormItem>
+            )}
+          />
+          <div className="grid grid-cols-3 gap-8">
             <FormField
               control={form.control}
               name="label"

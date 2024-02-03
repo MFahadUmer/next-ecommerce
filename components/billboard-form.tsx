@@ -110,7 +110,7 @@ const BillboardForm: React.FC<BillboardsFormProps> = ({ initialData }) => {
               name="label"
               render={({ field }) => (
                 <FormItem>
-                  <FormLabel>Name</FormLabel>
+                  <FormLabel>Label</FormLabel>
                   <FormControl>
                     <Input
                       disabled={loading}
@@ -124,7 +124,7 @@ const BillboardForm: React.FC<BillboardsFormProps> = ({ initialData }) => {
             />
           </div>
           <Button disabled={loading} type="submit">
-            Save Changes
+            {action}
           </Button>
         </form>
       </Form>
